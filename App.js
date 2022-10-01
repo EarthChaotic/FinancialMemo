@@ -5,6 +5,7 @@ import {
   Button,
   SafeAreaView,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
@@ -17,34 +18,33 @@ import {
 } from "@react-navigation/drawer";
 import HomeScreen from "./Screens/HomeScreen";
 import ProductSceen from "./Screens/ProductScreen";
-import { Item } from "react-navigation-header-buttons";
+import FinanceScreen from "./Screens/FinanceScreen";
+import WalletScreen from "./Screens/WalletScreen";
+import SummaryScreen from "./Screens/SummaryScreen";
+import SupportScreen from "./Screens/SupportScreen";
+import { Ionicons } from "@expo/vector-icons";
+import {
+  HeaderButtons,
+  HeaderButton,
+  Item,
+  HiddenItem,
+  OverflowMenu,
+} from "react-navigation-header-buttons";
+import { color } from "react-native-reanimated";
+
+const IoniconsHeaderButton = (props) => (
+  <HeaderButton IconComponent={Ionicons} iconSize={23} {...props} />
+);
 
 const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "rgb(255,45,85)",
+    primary: "#16354D",
   },
 };
 
-function FeedScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Feed Screen</Text>
-      <Button title="Open Drawer" onPress={() => navigation.openDrawer()} />
-      {/* <Button title="Toggle Drawer" onPress={() => navigation.toggleDrawer()} /> */}
-    </View>
-  );
-}
-
-function Notification() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Notification Screen</Text>
-    </View>
-  );
-}
-
+//Drawer Content
 function CustomDrawerContent(props) {
   return (
     <SafeAreaView>
@@ -54,10 +54,6 @@ function CustomDrawerContent(props) {
       />
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
-        <DrawerItem
-          label="Close Drawer"
-          onPress={() => props.navigation.closeDrawer()}
-        />
         {/* <DrawerItem
         label="Toggle Drawer"
         onPress={() => props.navigation.toggleDrawer()}
@@ -68,6 +64,7 @@ function CustomDrawerContent(props) {
 }
 const Drawer = createDrawerNavigator();
 
+//ใส่เพื่อเพิ่มแถบข้างใน Drawer
 function MyDrawer() {
   return (
     <Drawer.Navigator
@@ -77,13 +74,22 @@ function MyDrawer() {
         drawerStyle: {
           width: 225,
         },
-        headerTitleAlign:"center",
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontWeight: "500",
+        },
+        headerStyle: {
+          backgroundColor: "#16354D",
+        },
+        headerTintColor: "#fff",
       }}
     >
-      <Drawer.Screen name="Home" component={HomeScreen} 
-      
-      />
+      <Drawer.Screen name="HOME" component={HomeScreen} />
       {/* <Drawer.Screen name="Feed" component={FeedScreen} /> */}
+      <Drawer.Screen name="FINANCIAL" component={FinanceScreen} />
+      <Drawer.Screen name="WALLET" component={WalletScreen} />
+      <Drawer.Screen name="SUMMARY" component={SummaryScreen} />
+      <Drawer.Screen name="SUPPORT" component={SupportScreen} />
       <Drawer.Screen name="Product" component={ProductSceen} />
     </Drawer.Navigator>
   );
@@ -91,7 +97,7 @@ function MyDrawer() {
 const App = () => {
   return (
     <NavigationContainer theme={MyTheme}>
-      <MyDrawer />
+      <MyDrawer/>
     </NavigationContainer>
   );
 };
