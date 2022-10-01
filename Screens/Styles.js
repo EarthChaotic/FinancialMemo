@@ -53,6 +53,17 @@ const Styles = StyleSheet.create({
         color: "#16354D",
         fontWeight: "bold",
       },
+      floattouch:{
+        borderWidth: 2,
+        borderColor: 'rgba(0,0,0,0.2)',
+        width: 50,
+        height: 50,
+        backgroundColor: '#fE0',
+        borderRadius: 100,
+        bottom:10,
+        right:10,
+        position: 'absolute',
+      }
 })
 
 export default Styles

@@ -4,6 +4,7 @@ import {
   View,
   TouchableOpacity,
   Image,
+  SafeAreaView
 } from "react-native";
 import {
   HeaderButtons,
@@ -27,9 +28,10 @@ const FinanceScreen = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <View>
-        <Text>Finance จ้า</Text>
-    </View>
+        <SafeAreaView style={{flex:1}}>
+            <Text>Lorem</Text>
+            <TouchableOpacity style={Styles.floattouch}></TouchableOpacity>
+        </SafeAreaView>
   );
 };
 

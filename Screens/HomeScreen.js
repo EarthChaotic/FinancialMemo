@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { HeaderButtons } from "react-navigation-header-buttons";
 import Styles from "./Styles";
+import { FloatingAction } from "react-native-floating-action";
 
 const HomeScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
@@ -26,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <SafeAreaView style={{ flex: 1, marginTop: 40 }}>
+    <SafeAreaView style={{ paddingtop: 40 }}>
       <View>
         <TouchableOpacity onPress={() => navigation.navigate("FINANCIAL")}>
           <View style={Styles.Homecontainer}>
