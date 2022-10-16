@@ -90,7 +90,6 @@ function MyDrawer() {
       <Drawer.Screen name="WALLET" component={WalletScreen} />
       <Drawer.Screen name="SUMMARY" component={SummaryScreen} />
       <Drawer.Screen name="SUPPORT" component={SupportScreen} />
-      <Drawer.Screen name="Product" component={ProductSceen} />
     </Drawer.Navigator>
   );
 }
