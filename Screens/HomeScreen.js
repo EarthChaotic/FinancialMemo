@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { HeaderButtons } from "react-navigation-header-buttons";
 import Styles from "./Styles";
-import { FloatingAction } from "react-native-floating-action";
 
 const HomeScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
