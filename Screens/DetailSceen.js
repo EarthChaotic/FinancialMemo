@@ -29,17 +29,17 @@ const styles = StyleSheet.create({
         height: 70,​
     },
     dataContent: {​
-      marginTop: 5,​
-      marginLeft: 15,​
-  },​
-  title: {​
-      color: '#444',​
-      fontSize: 18,​
-      fontWeight: 'bold',​
-  },​
-  detail: {​
-      fontSize: 16,​
-      color: '#888',​
-      fontWeight: '700',​
-  },​
+      marginTop: 5,
+      marginLeft: 15,
+  },
+  title: {
+      color: '#444',
+      fontSize: 18,
+      fontWeight: 'bold',
+  },
+  detail: {
+      fontSize: 16,
+      color: '#888',
+      fontWeight: '700',
+  },
 })
