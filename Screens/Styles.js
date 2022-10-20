@@ -1,6 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { color } from "react-native-reanimated";
+import { StyleSheet} from "react-native";
 
 const Styles = StyleSheet.create({
   headericon: {
@@ -8,14 +6,26 @@ const Styles = StyleSheet.create({
     height: 40,
     marginLeft: 10,
   },
+  AddTransContainer: {
+    backgroundColor: "#DCDCDC",
+    justifyContent: "space-evenly",
+    flexDirection: "column",
+    margin: 15,
+    borderRadius: 5,
+    padding: 10,
+  },
+  AddTransdataContainer: {
+    flexDirection: "row",
+    justifyContent:"space-between",
+    marginBottom:10
+  },
   Homecontainer: {
-    height: 80,
-    elevation: 3,
-    borderColor: "gray",
     borderRadius: 5,
     flexDirection: "row",
-    marginLeft: 20,
-    marginTop: 10,
+    margin: 10,
+    backgroundColor: "#DCDCDC",
+    padding: 5,
+    justifyContent: "center",
   },
   HomedataContainer: {
     flex: 1,
@@ -59,30 +69,19 @@ const Styles = StyleSheet.create({
     color: "#16354D",
     fontWeight: "bold",
   },
-  floattouch: {
-    borderWidth: 2,
-    borderColor: "rgba(0,0,0,0.2)",
-    width: 50,
-    height: 50,
-    backgroundColor: "#fE0",
-    borderRadius: 100,
-    bottom: 10,
-    right: 10,
-    position: "absolute",
-  },
   SupportSubject: {
     width: 300,
     height: 45,
     marginBottom: 10,
     fontSize: 20,
-    textAlign:"left",
+    textAlign: "left",
   },
   SupportTextInp: {
-    marginTop:10,
+    marginTop: 10,
     width: 300,
-    maxHeight:500,
+    maxHeight: 500,
     fontSize: 20,
-    textAlign:"left"
+    textAlign: "left",
   },
   SendPlace: {
     elevation: 3,
@@ -91,36 +90,36 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     marginLeft: 20,
     marginTop: 20,
-    justifyContent:"flex-end"
+    justifyContent: "flex-end",
   },
-  SendTouch:{
-    marginRight:10,
-    backgroundColor:'#E538AE',
-    padding:5,
+  SendTouch: {
+    marginRight: 10,
+    backgroundColor: "#E538AE",
+    padding: 5,
     borderRadius: 5,
   },
-  CancelTouch:{
-    marginRight:10,
-    backgroundColor:'#8D9DA9',
-    padding:5,
+  CancelTouch: {
+    marginRight: 10,
+    backgroundColor: "#8D9DA9",
+    padding: 5,
     borderRadius: 5,
   },
-  SendText:{
-    fontSize:15,
-    fontWeight:'600',
-    color:'white'
+  SendText: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "white",
   },
-  CancelText:{
-    fontSize:15,
-    fontWeight:'600',
-    color:'white'
+  CancelText: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "white",
   },
-  testcontain:{
-    flex:1,
-    alignItems:'center',
-    backgroundColor:'#16354D',
-    justifyContent:'center'
-  }
+  testcontain: {
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: "#16354D",
+    justifyContent: "center",
+  },
 });
 
 export default Styles;

@@ -26,7 +26,7 @@ const HomeScreen = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <SafeAreaView style={{ paddingtop: 40 }}>
+    <SafeAreaView>
       <View>
         <TouchableOpacity onPress={() => navigation.navigate("FINANCIAL")}>
           <View style={Styles.Homecontainer}>
