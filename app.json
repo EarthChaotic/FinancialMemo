@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "boycrypto",
-    "slug": "boycrypto",
+    "name": "FinanceMemo",
+    "slug": "FinanceMemo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

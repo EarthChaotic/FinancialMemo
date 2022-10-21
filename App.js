@@ -1,8 +1,4 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  Image,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Image } from "react-native";
 import React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import {
@@ -16,9 +12,7 @@ import WalletScreen from "./Screens/WalletScreen";
 import SummaryScreen from "./Screens/SummaryScreen";
 import SupportScreen from "./Screens/SupportScreen";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  HeaderButton,
-} from "react-navigation-header-buttons";
+import { HeaderButton } from "react-navigation-header-buttons";
 
 const IoniconsHeaderButton = (props) => (
   <HeaderButton IconComponent={Ionicons} iconSize={23} {...props} />
@@ -75,7 +69,7 @@ function MyDrawer() {
 const App = () => {
   return (
     <NavigationContainer theme={MyTheme}>
-      <MyDrawer/>
+      <MyDrawer />
     </NavigationContainer>
   );
 };

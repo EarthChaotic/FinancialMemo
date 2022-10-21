@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image, TextInput } from "react-native";
+import { Text, View, TouchableOpacity, Image, TextInput,SafeAreaView } from "react-native";
 import { HeaderButtons } from "react-navigation-header-buttons";
 import Styles from "./Styles";
 const ItemSeparatorView = () => {
@@ -32,7 +32,7 @@ const SupportScreen = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <View>
+    <SafeAreaView>
       <View style={Styles.Homecontainer}>
         <View style={Styles.dataContent}>
           <TextInput style={Styles.SupportSubject} placeholder="Subject" />
@@ -53,7 +53,7 @@ const SupportScreen = ({ navigation }) => {
             </TouchableOpacity>
         </View>
       </View>
-    </View>
+      </SafeAreaView>
   );
 };
 
