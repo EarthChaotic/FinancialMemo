@@ -1,19 +1,14 @@
 import React from "react";
-import { Text, View, TouchableOpacity, Image, TextInput,SafeAreaView } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  TextInput,
+} from "react-native";
 import { HeaderButtons } from "react-navigation-header-buttons";
 import Styles from "./Styles";
-const ItemSeparatorView = () => {
-  return (
-    // Flat List Item Separator
-    <View
-      style={{
-        height: 0.5,
-        width: "100%",
-        backgroundColor: "#C8C8C8",
-      }}
-    />
-  );
-};
+
 
 const SupportScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
@@ -32,28 +27,38 @@ const SupportScreen = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <SafeAreaView>
-      <View style={Styles.Homecontainer}>
-        <View style={Styles.dataContent}>
-          <TextInput style={Styles.SupportSubject} placeholder="Subject" />
-          <ItemSeparatorView />
-          <TextInput
-            style={Styles.SupportTextInp}
-            placeholder="Input Text Here"
-          />
+    <View styles={Styles.container}>
+      <View style={Styles.supportcontainer}>
+        <View style={Styles.SupportDataContent}>
+          <Text>วัน เดือน ปี               :</Text>
+          <TextInput style={Styles.SupportTextInp} placeholder="วันที่" />
+        </View>
+        <View style={Styles.SupportDataContent}>
+          <Text>จาก                         :</Text>
+          <TextInput style={Styles.SupportTextInp} placeholder="ชื่อ" />
+        </View>
+        <View style={Styles.SupportDataContent}>
+          <Text>ถึง                           :</Text>
+          <Text>FinancialMemo@gmail.com</Text>
+        </View>
+        <View style={Styles.SupportDataContent}>
+          <Text>หัวข้อ(ถ้ามี)              :</Text>
+          <TextInput style={Styles.SupportTextInp} placeholder="หัวข้อ" />
+        </View>
+        <View style={Styles.SupportDataContent}>
+          <Text>รายละเอียด              :</Text>
+          <TextInput style={Styles.SupportTextInp} placeholder="รายละเอียด" />
+        </View>
+        <View style={Styles.SupportButtonContent}>
+        <TouchableOpacity style={Styles.SendTouch}>
+          <Text>CONFIRM</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.CancelTouch}>
+          <Text>CANCEL</Text>
+        </TouchableOpacity>
         </View>
       </View>
-      <View>
-        <View style={Styles.SendPlace}>
-            <TouchableOpacity style={Styles.SendTouch} onPress={() => navigation.navigate("HOME")}>
-                <Text style={Styles.SendText}>Send</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={Styles.CancelTouch} onPress={() => navigation.navigate("HOME")}>
-                <Text style={Styles.CancelText}>Cancel</Text>
-            </TouchableOpacity>
-        </View>
-      </View>
-      </SafeAreaView>
+    </View>
   );
 };
 

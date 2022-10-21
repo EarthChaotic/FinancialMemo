@@ -1,6 +1,10 @@
-import { StyleSheet} from "react-native";
+import { StyleSheet } from "react-native";
 
 const Styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#E8EAED",
+  },
   headericon: {
     width: 40,
     height: 40,
@@ -16,8 +20,8 @@ const Styles = StyleSheet.create({
   },
   AddTransdataContainer: {
     flexDirection: "row",
-    justifyContent:"space-between",
-    marginBottom:10
+    justifyContent: "space-between",
+    marginBottom: 10,
   },
   Homecontainer: {
     borderRadius: 5,
@@ -69,18 +73,24 @@ const Styles = StyleSheet.create({
     color: "#16354D",
     fontWeight: "bold",
   },
-  SupportSubject: {
-    width: 300,
-    height: 45,
-    marginBottom: 10,
-    fontSize: 20,
-    textAlign: "left",
+  supportcontainer: {
+    borderRadius: 5,
+    backgroundColor: "#FFF",
+    justifyContent: "center",
+    padding: 5,
+    margin: 10,
+  },
+  SupportDataContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom:30
+  },
+  SupportButtonContent:{
+    flexDirection: "row",
+    alignSelf:"flex-end"
   },
   SupportTextInp: {
-    marginTop: 10,
-    width: 300,
-    maxHeight: 500,
-    fontSize: 20,
+    width: 175,
     textAlign: "left",
   },
   SendPlace: {
