@@ -1,65 +1,85 @@
-import React, {useState} from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
-import Task from './ShowTSList'
+import React, { useState } from "react";
+import {
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Keyboard,
+  ScrollView,
+} from "react-native";
+import Task from "./Knowledge For Screen/ShowTSList";
 
 export default function App() {
-  const [task, setTask] = useState();
-  const [taskItems, setTaskItems] = useState([]);
+  const [detail, setdetail] = useState();
+  const [detailItems, setdetailItems] = useState([]);
+  const [amount, setamount] = useState();
+  const [amountItems, setamountItems] = useState([]);
 
-  const handleAddTask = () => {
+  const handleAdddetail = () => {
     Keyboard.dismiss();
-    setTaskItems([...taskItems, task])
-    setTask(null);
-  }
+    setdetailItems([...detailItems, detail]);
+    setdetail(null);
+    setamountItems([...amountItems, amount]);
+    setamount(null);
+  };
 
-  const completeTask = (index) => {
-    let itemsCopy = [...taskItems];
+  const removetrans = (index) => {
+    let itemsCopy = [...detailItems];
     itemsCopy.splice(index, 1);
-    setTaskItems(itemsCopy)
-  }
+    setdetailItems(itemsCopy);
+  };
 
   return (
     <View style={styles.container}>
       {/* Added this scroll view to enable scrolling when list gets longer than the page */}
       <ScrollView
         contentContainerStyle={{
-          flexGrow: 1
+          flexGrow: 1,
         }}
-        keyboardShouldPersistTaps='handled'
+        keyboardShouldPersistTaps="handled"
       >
-
-      {/* Today's Tasks */}
-      <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Today's tasks</Text>
-        <View style={styles.items}>
-          {/* This is where the tasks will go! */}
-          {
-            taskItems.map((item, index) => {
+        {/* Today's Tasks */}
+        <View style={styles.tasksWrapper}>
+          <Text style={styles.sectionTitle}>Today's tasks</Text>
+          <View style={styles.items}>
+            {/* This is where the tasks will go! */}
+            {detailItems.map((item, index) => {
               return (
-                <TouchableOpacity key={index}  onPress={() => completeTask(index)}>
-                  <Task text={item} /> 
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => removetrans(index)}
+                >
+                  <Task text={item} />
                 </TouchableOpacity>
-              )
-            })
-          }
+              );
+            })}
+          </View>
         </View>
-      </View>
-        
       </ScrollView>
 
       {/* Write a task */}
       {/* Uses a keyboard avoiding view which ensures the keyboard does not cover the items on screen */}
-      <KeyboardAvoidingView 
-        style={styles.writeTaskWrapper}
-      >
-        <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
-        <TouchableOpacity onPress={() => handleAddTask()}>
+      <KeyboardAvoidingView style={styles.writeTaskWrapper}>
+        <TextInput
+          style={styles.input}
+          placeholder={"Write a task"}
+          value={detail}
+          onChangeText={(text) => setdetail(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder={"Write a task"}
+          value={amount}
+          onChangeText={(text) => setamount(text)}
+        />
+        <TouchableOpacity onPress={() => handleAdddetail()}>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-      
     </View>
   );
 }
@@ -67,7 +87,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: "#E8EAED",
   },
   tasksWrapper: {
     paddingTop: 80,
@@ -75,36 +95,36 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
   items: {
     marginTop: 30,
   },
   writeTaskWrapper: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 60,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
   },
   input: {
     paddingVertical: 15,
     paddingHorizontal: 15,
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     borderRadius: 60,
-    borderColor: '#C0C0C0',
+    borderColor: "#C0C0C0",
     borderWidth: 1,
     width: 250,
   },
   addWrapper: {
     width: 60,
     height: 60,
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     borderRadius: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#C0C0C0',
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#C0C0C0",
     borderWidth: 1,
   },
   addText: {},
