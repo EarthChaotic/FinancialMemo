@@ -13,6 +13,9 @@ import SummaryScreen from "./Screens/SummaryScreen";
 import SupportScreen from "./Screens/SupportScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { HeaderButton } from "react-navigation-header-buttons";
+import { Provider } from 'react-redux';
+import { store } from './src/store';
+<Provider store={store}></Provider>
 
 const IoniconsHeaderButton = (props) => (
   <HeaderButton IconComponent={Ionicons} iconSize={23} {...props} />
