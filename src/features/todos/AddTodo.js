@@ -47,8 +47,8 @@ export const AddTodo = () => {
         <RNPickerSelect
           onValueChange={setwallet}
           items={[
-            { label: "กระเป๋าตัง", value: "wallet" },
-            { label: "ธนาคาร", value: "bank" },
+            { label: "กระเป๋าตัง", value: "กระเป๋าตัง" },
+            { label: "ธนาคาร", value: "ธนาคาร" },
           ]}
         />
       </View>

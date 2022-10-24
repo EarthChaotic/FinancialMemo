@@ -40,20 +40,12 @@ function Notification() {
 function CustomDrawerContent(props) {
   return (
     <SafeAreaView>
-      <Image
-        source={require("./assets/react_logo.png")}
-        style={styles.sideMenuProfileIcon}
-      />
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
           label="Close Drawer"
           onPress={() => props.navigation.closeDrawer()}
         />
-        {/* <DrawerItem
-        label="Toggle Drawer"
-        onPress={() => props.navigation.toggleDrawer()}
-      /> */}
       </DrawerContentScrollView>
     </SafeAreaView>
   );
