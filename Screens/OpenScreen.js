@@ -22,19 +22,19 @@ const OpenScreen = ({ navigation }) => {
         <Text style={styles.title}>Welcome to Finacial Memo</Text>
         <TouchableOpacity
           style={styles.Buttontop}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("LOGIN")}
         >
           <Text style={styles.titleButtontop}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Buttonrow}
-          onPress={() => navigation.navigate("Signup")}
+          onPress={() => navigation.navigate("SIGNUP")}
         >
           <Text style={styles.titleButton}>SIGN UP</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Buttonrow}
-          onPress={() => navigation.navigate("Guest")}
+          onPress={() => navigation.navigate("GUEST")}
         >
           <Text style={styles.titleButton}>GUEST LOGIN</Text>
         </TouchableOpacity>

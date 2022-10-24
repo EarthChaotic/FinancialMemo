@@ -44,7 +44,7 @@ export const AddWallet = () => {
     <View style={styles.container}>
       <Text>ชื่อกระเป๋าเงิน</Text>
       <TextInput
-        placeholder="จำนวนเงิน"
+        placeholder="กระเป๋าตัง"
         value={walletn}
         onChangeText={setwalletn}
         style={Styles.SupportTextInp}

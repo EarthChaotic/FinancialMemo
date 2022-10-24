@@ -10,7 +10,15 @@ import {
 import React, { useState } from "react";
 
 const GuestScreen = ({ navigation }) => {
-  const [guestname, setGuestname] = useState();
+  const [guestname, setGuestname] = useState("");
+  function enterhandler() {
+    if (guestname === "") {
+      alert("โปรดใส่ชื่อ")
+    } else {
+      navigation.navigate('HOME')
+    }
+
+  }
 
   return (
     <SafeAreaView style={styles.background}>
@@ -39,13 +47,13 @@ const GuestScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.ButtonLeft}>
+        <TouchableOpacity style={styles.ButtonLeft} onPress={enterhandler}>
           <Text style={styles.titleButtonLeft}>ENTER</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.ButtonRight}>
           <Text
             style={styles.titleButtonRight}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("LOGIN")}
           >
             LOGIN
           </Text>
@@ -56,7 +64,7 @@ const GuestScreen = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={styles.underline}
-            onPress={() => navigation.navigate("Signup")}
+            onPress={() => navigation.navigate("SIGNUP")}
           >
             Sign up
           </Text>

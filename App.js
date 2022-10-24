@@ -35,6 +35,9 @@ function CustomDrawerContent(props) {
     <SafeAreaView>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
+        {/* <DrawerItem
+          label="Sign out"
+          onPress={() => props.navigation("LOGIN")}/> */}
       </DrawerContentScrollView>
     </SafeAreaView>
   );
@@ -44,20 +47,18 @@ const Stack = createNativeStackNavigator();
 
 function MyStack() {
   return (
-    <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Open"
         screenOptions={{
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Open" component={OpenScreen} />
-        <Stack.Screen name="Signup" component={SignUpScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Guest" component={GuestScreen} />
-        <Stack.Screen name="HOME" component={Drawer}/>
+        <Stack.Screen name="OPEN" component={OpenScreen} />
+        <Stack.Screen name="SIGNUP" component={SignUpScreen} />
+        <Stack.Screen name="LOGIN" component={LoginScreen} />
+        <Stack.Screen name="GUEST" component={GuestScreen} />
+        <Stack.Screen name="HOME" component={MyDrawer}/>
       </Stack.Navigator>
-    </NavigationContainer>
   );
 }
 
@@ -81,10 +82,6 @@ function MyDrawer() {
         headerTintColor: "#fff",
       }}
     >
-      <Drawer.Screen name="Open" component={OpenScreen} />
-      <Drawer.Screen name="Signup" component={SignUpScreen} />
-      <Drawer.Screen name="Login" component={LoginScreen} />
-      <Drawer.Screen name="Guest" component={GuestScreen} />
       <Drawer.Screen name="HOME" component={HomeScreen} />
       <Drawer.Screen name="FINANCIAL" component={FinanceScreen} />
       <Drawer.Screen name="WALLET" component={WalletScreen} />
@@ -97,7 +94,7 @@ const App = () => {
   return (
     <NavigationContainer theme={MyTheme}>
       <Provider store={store}>
-      <MyDrawer />
+      <MyStack />
       </Provider>
     </NavigationContainer>
   );

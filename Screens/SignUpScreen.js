@@ -8,8 +8,6 @@ import {
   TextInput,
 } from "react-native";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { nanoid } from "nanoid";
 import LoginScreen from "./LoginScreen";
 
 const SignUpScreen = ({ navigation }) => {
@@ -18,17 +16,9 @@ const SignUpScreen = ({ navigation }) => {
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
-  // const dispatch = useDispatch();
 
   function handleregister() {
-    if (email == '' || password == '' || name == '' || confirmPassword == '') {
-      handleMessage('Please fill all the fields');
-    } else if (values.password !== values.confirmPassword) {
-      handleMessage('Password do not match');
-    } else {
-      alert('สมัครเสร็จสิ้น')
-      navigation.navigate('Login')
-    }
+    navigation.navigate('LOGIN')
   }
 
   return (
@@ -116,7 +106,7 @@ const SignUpScreen = ({ navigation }) => {
         <TouchableOpacity style={styles.ButtonRight}>
           <Text
             style={styles.titleButtonRight}
-            onPress={() => navigation.navigate("Guest")}
+            onPress={() => navigation.navigate("GUEST")}
           >
             GUEST
           </Text>
@@ -127,7 +117,7 @@ const SignUpScreen = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={styles.underline}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("LOGIN")}
           >
             Login
           </Text>

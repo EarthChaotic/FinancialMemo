@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }) => {
       alert("โปรดใส่รหัส");
     }
     else{
-      
+      navigation.navigate('HOME')
     }
   }
   return (
@@ -63,13 +63,13 @@ const LoginScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.ButtonLeft}>
+        <TouchableOpacity style={styles.ButtonLeft} onPress={handleSumbit}>
           <Text style={styles.titleButtonLeft}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.ButtonRight}>
           <Text
             style={styles.titleButtonRight}
-            onPress={() => navigation.navigate("Guest")}
+            onPress={() => navigation.navigate("GUEST")}
           >
             GUEST
           </Text>
@@ -80,7 +80,7 @@ const LoginScreen = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={styles.underline}
-            onPress={() => navigation.navigate("Signup")}
+            onPress={() => navigation.navigate("SIGNUP")}
           >
             Sign up
           </Text>
