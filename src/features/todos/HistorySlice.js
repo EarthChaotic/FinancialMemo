@@ -6,8 +6,8 @@ const initialState ={
   TransHistory: [],
 }
 
-const todosSlice = createSlice({
-  name: 'todos',
+const HistorySlice = createSlice({
+  name: 'Histories',
   initialState : [],
   reducers: {
     addTodo(state, action) {
@@ -16,15 +16,9 @@ const todosSlice = createSlice({
     deletetrans(state,action){
       state.TransHistory = state.TransHistory.filter((detail)=>detail.id !==action.payload.id)
     }
-    // toggleTodo(state, action) {
-    //   const todo = state.find(todo => todo.id === action.payload)
-    //   if (todo) {
-    //     todo.completed = !todo.completed
-    //   }
-    // }
   },
 })
 
-export const { addTodo, deletetrans } = todosSlice.actions
+export const { addTodo, deletetrans } = HistorySlice.actions
 
-export default todosSlice.reducer
+export default HistorySlice.reducer

@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import todoSlice from './features/todos/todosSlice';
+import HistorySlice from './features/todos/HistorySlice';
 export const store = configureStore({
   reducer: {
-    todos: todoSlice,
-    amounts : todoSlice
+    Histories: HistorySlice,
   },
 })

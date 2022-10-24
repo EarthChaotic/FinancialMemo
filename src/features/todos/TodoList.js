@@ -2,16 +2,16 @@ import React from "react";
 import { Text, View, StyleSheet,TouchableOpacity } from "react-native";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import { deletetrans } from './todosSlice';
+import { deletetrans } from './HistorySlice';
 
 export function TodoList() {
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos);
+  const Histories = useSelector((state) => state.Histories);
   const deletetranshandler = (id) => {
     dispatch(deletetrans({id : id}))
   }
 
-  if (!todos.length) {
+  if (!Histories.length) {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>เริ่มจดบันทึกได้เลย!</Text>
@@ -21,7 +21,7 @@ export function TodoList() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>รายการธุรกรรม</Text>
-      {todos.map((todo) => (
+      {Histories.map((todo) => (
         <Text style={styles.todoText} key={todo.id}>
           {todo.detail} {todo.amount} {todo.category} {todo.Today}
         </Text>

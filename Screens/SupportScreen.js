@@ -30,31 +30,31 @@ const SupportScreen = ({ navigation }) => {
     <View styles={Styles.container}>
       <View style={Styles.supportcontainer}>
         <View style={Styles.SupportDataContent}>
-          <Text>วัน เดือน ปี               :</Text>
+          <Text style={Styles.colormsg}>วัน เดือน ปี               :</Text>
           <TextInput style={Styles.SupportTextInp} placeholder="วันที่" />
         </View>
         <View style={Styles.SupportDataContent}>
-          <Text>จาก                         :</Text>
+          <Text style={Styles.colormsg}>จาก                         :</Text>
           <TextInput style={Styles.SupportTextInp} placeholder="ชื่อ" />
         </View>
         <View style={Styles.SupportDataContent}>
-          <Text>ถึง                           :</Text>
+          <Text style={Styles.colormsg}>ถึง                           :</Text>
           <Text>FinancialMemo@gmail.com</Text>
         </View>
         <View style={Styles.SupportDataContent}>
-          <Text>หัวข้อ(ถ้ามี)              :</Text>
+          <Text style={Styles.colormsg}>หัวข้อ (ถ้ามี)             :</Text>
           <TextInput style={Styles.SupportTextInp} placeholder="หัวข้อ" />
         </View>
         <View style={Styles.SupportDataContent}>
-          <Text>รายละเอียด              :</Text>
+          <Text style={Styles.colormsg}>รายละเอียด              :</Text>
           <TextInput style={Styles.SupportTextInp} placeholder="รายละเอียด" />
         </View>
         <View style={Styles.SupportButtonContent}>
         <TouchableOpacity style={Styles.SendTouch}>
-          <Text>CONFIRM</Text>
+          <Text style={{color:"#FFFFFF"}}>CONFIRM</Text>
         </TouchableOpacity>
         <TouchableOpacity style={Styles.CancelTouch}>
-          <Text>CANCEL</Text>
+          <Text style={{color:"#FFFFFF"}}>CANCEL</Text>
         </TouchableOpacity>
         </View>
       </View>

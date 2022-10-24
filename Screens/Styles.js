@@ -75,9 +75,9 @@ const Styles = StyleSheet.create({
   },
   supportcontainer: {
     borderRadius: 5,
-    backgroundColor: "#FFF",
+    backgroundColor: "#FEFEFE",
     justifyContent: "center",
-    padding: 5,
+    padding: 20,
     margin: 10,
   },
   SupportDataContent: {
@@ -91,7 +91,10 @@ const Styles = StyleSheet.create({
   },
   SupportTextInp: {
     width: 175,
-    textAlign: "left",
+    padding : 10,
+    backgroundColor : "#ECECEC",
+    color : "#16354D",
+    borderRadius : 3
   },
   SendPlace: {
     elevation: 3,
@@ -107,12 +110,14 @@ const Styles = StyleSheet.create({
     backgroundColor: "#E538AE",
     padding: 5,
     borderRadius: 5,
+    color : "#FFFFFF",
   },
   CancelTouch: {
     marginRight: 10,
     backgroundColor: "#8D9DA9",
     padding: 5,
     borderRadius: 5,
+    alignItems:'center'
   },
   SendText: {
     fontSize: 15,
@@ -130,6 +135,22 @@ const Styles = StyleSheet.create({
     backgroundColor: "#16354D",
     justifyContent: "center",
   },
+  colormsg : {
+    color : "#16354D",
+  },
+  AddYellow :{
+    marginRight: 10,
+    padding: 5,
+    borderRadius: 5,
+    backgroundColor : "#E2D96B",
+    alignItems:'center',
+    marginBottom:10
+  },
+  modalrow :{
+    flexDirection: "row",
+    justifyContent : "space-between",
+    marginBottom:30
+  }
 });
 
 export default Styles;
