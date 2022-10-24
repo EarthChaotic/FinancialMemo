@@ -34,7 +34,7 @@ export function TodoList() {
           <View style={styles.itemLeft}>
             <View style={styles.square}></View>
             <Text style={styles.itemText}>
-              {todo.detail} {todo.amount} {todo.category}
+              {todo.detail} {todo.amount} {todo.category} {todo.Today}
             </Text>
           </View>
           <View style={styles.circular}></View>

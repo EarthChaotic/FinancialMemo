@@ -15,7 +15,7 @@ export const AddTodo = () => {
   const [wallet, setwallet] = useState();
   const [transtype, settranstype] = useState();
   const [category, setcategory] = useState("อื่นๆ");
-  let Today = moment().format("DD-MM");
+  let Today = moment().format("DD-MM-YY HH.mm a");
 
   function handleSumbit() {
     if (isNaN(amount)) {
