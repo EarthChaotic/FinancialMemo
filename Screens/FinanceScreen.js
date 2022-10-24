@@ -14,7 +14,6 @@ import React, { useState } from "react";
 import { TodoList } from "../src/features/todos/TodoList";
 import { AddTodo } from "../src/features/todos/AddTodo";
 
-
 const IoniconsHeaderButton = (props) => (
   <HeaderButton IconComponent={Ionicons} iconSize={23} {...props} />
 );
@@ -48,15 +47,28 @@ const FinanceScreen = ({ navigation }) => {
       <Modal animationType={"slide"} transparent={false} visible={showModal}>
         <View style={Styles.AddTransContainer}>
           <AddTodo />
-          <TouchableOpacity onPress={() => setShowModal(!showModal)}>
-            ปิด
-          </TouchableOpacity>
+        
+            <TouchableOpacity
+              style={Styles.CancelTouch}
+              onPress={() => setShowModal(!showModal)}
+            >
+              <Text
+                style={{
+                  color: "#FFFFFF",
+                  fontWeight: "bold",
+                  alignContent: "center",
+                }}
+              >
+                CANCEL
+              </Text>
+            </TouchableOpacity>
+
         </View>
       </Modal>
       {/* add transaction modal */}
       <View>
-        <TodoList/>
-        </View>
+        <TodoList />
+      </View>
     </SafeAreaView>
   );
 };
