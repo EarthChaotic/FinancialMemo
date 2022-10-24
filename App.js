@@ -11,15 +11,9 @@ import FinanceScreen from "./Screens/FinanceScreen";
 import WalletScreen from "./Screens/WalletScreen";
 import SummaryScreen from "./Screens/SummaryScreen";
 import SupportScreen from "./Screens/SupportScreen";
-import { Ionicons } from "@expo/vector-icons";
-import { HeaderButton } from "react-navigation-header-buttons";
 import { Provider } from 'react-redux';
 import { store } from './src/store';
 
-
-const IoniconsHeaderButton = (props) => (
-  <HeaderButton IconComponent={Ionicons} iconSize={23} {...props} />
-);
 
 const MyTheme = {
   ...DefaultTheme,

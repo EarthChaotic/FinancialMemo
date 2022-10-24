@@ -14,15 +14,15 @@ export const AddTodo = () => {
   const dispatch = useDispatch();
   const [wallet, setwallet] = useState();
   const [transtype, settranstype] = useState();
-  const [category, setcategory] = useState("other");
-  let Today = moment().format("YYYY-MM-DD HH:mm");
+  const [category, setcategory] = useState("อื่นๆ");
+  let Today = moment().format("DD-MM");
 
   function handleSumbit() {
     if (isNaN(amount)) {
       alert("โปรดใส่จำนวนเงินให้ถูกต้อง");
-    } else if (!detail.trim()) {
+    } else if (detail === "") {
       alert("โปรดใส่รายละเอียด");
-    } else if(!amount.trim()){
+    } else if(amount === ""){
       alert("โปรดใส่จำนวนเงิน")
     }
     else{
@@ -84,12 +84,12 @@ export const AddTodo = () => {
         <RNPickerSelect
           onValueChange={setcategory}
           items={[
-            { label: "อาหาร", value: "food" },
-            { label: "รายเดือน", value: "subscribe" },
-            { label: "ช๊อปปิ้ง", value: "shopping" },
-            { label: "ค่าน้ำ", value: "waterbill" },
-            { label: "ค่าไฟ", value: "electricbill" },
-            { label: "อื่นๆ", value: "other" },
+            { label: "อาหาร", value: "อาหาร" },
+            { label: "รายเดือน", value: "รายเดือน" },
+            { label: "ช๊อปปิ้ง", value: "ช๊อปปิ้ง" },
+            { label: "ค่าน้ำ", value: "ค่าน้ำ" },
+            { label: "ค่าไฟ", value: "ค่าไฟ" },
+            { label: "อื่นๆ", value: "อื่นๆ" },
           ]}
         />
       </View>

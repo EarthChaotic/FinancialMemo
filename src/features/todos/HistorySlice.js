@@ -4,6 +4,7 @@ let nextTodoId = 0;
 
 const initialState ={
   TransHistory: [],
+  Wallet:[]
 }
 
 const HistorySlice = createSlice({

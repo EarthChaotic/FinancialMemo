@@ -9,7 +9,7 @@ import {
   HeaderButtons,
 } from "react-navigation-header-buttons";
 import Styles from "./Styles";
-import { TodoList } from "../src/features/todos/TodoList";
+import { SummaryList } from "../src/features/todos/SummaryList";
 
 const SummaryScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
@@ -29,7 +29,7 @@ const SummaryScreen = ({ navigation }) => {
 
   return (
     <View>
-        <TodoList/>
+        <SummaryList/>
     </View>
   );
 };
