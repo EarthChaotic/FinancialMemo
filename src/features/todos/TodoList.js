@@ -23,7 +23,7 @@ export function TodoList() {
       <Text style={styles.title}>รายการธุรกรรม</Text>
       {todos.map((todo) => (
         <Text style={styles.todoText} key={todo.id}>
-          {todo.detail} {todo.amount} 
+          {todo.detail} {todo.amount} {todo.category} {todo.Today}
         </Text>
       ))}
     </View>
