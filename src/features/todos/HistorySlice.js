@@ -3,8 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 let nextTodoId = 0;
 
 const initialState ={
+  balance :0,
+  expense:0,
+  income:0,
   TransHistory: [],
-  Wallet:[]
 }
 
 const HistorySlice = createSlice({
@@ -16,7 +18,7 @@ const HistorySlice = createSlice({
     },
     deletetrans(state,action){
       state.TransHistory = state.TransHistory.filter((detail)=>detail.id !==action.payload.id)
-    }
+    },
   },
 })
 

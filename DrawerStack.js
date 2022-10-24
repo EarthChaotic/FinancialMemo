@@ -6,6 +6,11 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from "@react-navigation/drawer";
+
+import OpenScreen from "./Screens/OpenScreen";
+import SignUpScreen from "./Screens/SignUpScreen";
+import LoginScreen from "./Screens/LoginScreen";
+import GuestScreen from "./Screens/GuestSrceen";
 import HomeScreen from "./Screens/HomeScreen";
 import FinanceScreen from "./Screens/FinanceScreen";
 import WalletScreen from "./Screens/WalletScreen";
@@ -22,6 +27,7 @@ const MyTheme = {
     primary: "#16354D",
   },
 };
+
 
 //Drawer Content
 function CustomDrawerContent(props) {
@@ -55,6 +61,10 @@ function MyDrawer() {
         headerTintColor: "#fff",
       }}
     >
+      <Drawer.Screen name="Open" component={OpenScreen} />
+      <Drawer.Screen name="Signup" component={SignUpScreen} />
+      <Drawer.Screen name="Login" component={LoginScreen} />
+      <Drawer.Screen name="Guest" component={GuestScreen} />
       <Drawer.Screen name="HOME" component={HomeScreen} />
       <Drawer.Screen name="FINANCIAL" component={FinanceScreen} />
       <Drawer.Screen name="WALLET" component={WalletScreen} />

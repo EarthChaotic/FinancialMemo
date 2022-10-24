@@ -11,6 +11,8 @@ const WalletList = () => {
   };
 
   const Wallets = useSelector((state) => state.Wallets);
+
+
   return (
     <View>
       {Wallets.map((wallet) => (
