@@ -1,9 +1,15 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet,TouchableOpacity } from "react-native";
 import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { deletetrans } from './todosSlice';
 
 export function TodoList() {
+  const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos);
+  const deletetranshandler = (id) => {
+    dispatch(deletetrans({id : id}))
+  }
 
   if (!todos.length) {
     return (
@@ -15,9 +21,10 @@ export function TodoList() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>รายการธุรกรรม</Text>
-      {todos.map((todo, index) => (
-        <Text style={styles.todoText} key={todo.id}>{`${index + 1}. ${
-          todo.detail}`}</Text>
+      {todos.map((todo) => (
+        <Text style={styles.todoText} key={todo.id}>
+          {todo.detail} {todo.amount} 
+        </Text>
       ))}
     </View>
   );

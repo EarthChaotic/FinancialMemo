@@ -42,8 +42,6 @@ const FinanceScreen = ({ navigation }) => {
     });
   }, [navigation]);
   const [showModal, setShowModal] = useState(false);
-  const [detail, setdetail] = useState("");
-  const [amount, setamount] = useState("");
   return (
     <SafeAreaView style={{ flex: 1 }}>
       {/* add transaction modal */}
