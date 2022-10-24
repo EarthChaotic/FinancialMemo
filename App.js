@@ -6,6 +6,11 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import OpenScreen from "./Screens/OpenScreen";
+import SignUpScreen from "./Screens/SignUpScreen";
+import LoginScreen from "./Screens/LoginScreen";
+import GuestScreen from "./Screens/GuestSrceen";
 import HomeScreen from "./Screens/HomeScreen";
 import FinanceScreen from "./Screens/FinanceScreen";
 import WalletScreen from "./Screens/WalletScreen";
@@ -23,6 +28,7 @@ const MyTheme = {
   },
 };
 
+
 //Drawer Content
 function CustomDrawerContent(props) {
   return (
@@ -34,6 +40,26 @@ function CustomDrawerContent(props) {
   );
 }
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
+
+function MyStack() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Open"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Open" component={OpenScreen} />
+        <Stack.Screen name="Signup" component={SignUpScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Guest" component={GuestScreen} />
+        <Stack.Screen name="HOME" component={Drawer}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 //ใส่เพื่อเพิ่มแถบข้างใน Drawer
 function MyDrawer() {
@@ -55,6 +81,10 @@ function MyDrawer() {
         headerTintColor: "#fff",
       }}
     >
+      <Drawer.Screen name="Open" component={OpenScreen} />
+      <Drawer.Screen name="Signup" component={SignUpScreen} />
+      <Drawer.Screen name="Login" component={LoginScreen} />
+      <Drawer.Screen name="Guest" component={GuestScreen} />
       <Drawer.Screen name="HOME" component={HomeScreen} />
       <Drawer.Screen name="FINANCIAL" component={FinanceScreen} />
       <Drawer.Screen name="WALLET" component={WalletScreen} />
