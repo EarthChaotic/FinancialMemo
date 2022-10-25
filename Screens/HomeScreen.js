@@ -88,8 +88,11 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={()=>navigation.navigate("LOGIN")}>
-          <Text>LOGOUT</Text>
+        <TouchableOpacity style={{flexDirection:"row",justifyContent:"center",margin:10,}} onPress={()=>navigation.navigate("LOGIN")}>
+          <Image 
+          source={require('./Pics/Logout.png')}
+          style={{resizeMode:"center" , height:40,width:40}}/>
+          <Text style={Styles.LogOut}>LOGOUT</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

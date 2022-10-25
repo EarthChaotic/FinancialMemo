@@ -150,6 +150,13 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent : "space-between",
     marginBottom:30
+  },
+  LogOut:{
+    marginBottom: 10,
+    padding: 12,
+    borderRadius: 10,
+    justifyContent:"center", 
+    textAlign:"center",
   }
 });
 
