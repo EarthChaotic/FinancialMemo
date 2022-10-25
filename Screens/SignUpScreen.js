@@ -11,14 +11,33 @@ import React, { useState } from "react";
 import LoginScreen from "./LoginScreen";
 
 const SignUpScreen = ({ navigation }) => {
-  const [name, setName] = useState();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [cpass, setcpass] = useState("");
 
   function handleregister() {
-    navigation.navigate('LOGIN')
+    if (
+      email === "" ||
+      password === "" ||
+      name === "" ||
+      cpass == "" ||
+      username == ""
+    ) {
+      alert("โปรดกรอกให้ครบทุกช่อง");
+    } else if (password != cpass) {
+      alert("รหัสผ่านไม่ตรงกัน");
+    } else {
+      navigation.navigate("LOGIN");
+      setName("")
+      setUsername("")
+      setPassword("")
+      setcpass("")
+      setEmail("")
+     
+    }
+    
   }
 
   return (
@@ -72,6 +91,18 @@ const SignUpScreen = ({ navigation }) => {
           onChangeText={setPassword}
           value={password}
         />
+        <Text style={styles.titleTop}>CONFIRM PASSWORD</Text>
+        <TextInput
+          style={{
+            width: 300,
+            padding: 10,
+            borderRadius: 10,
+            backgroundColor: "white",
+            marginBottom: 10,
+          }}
+          onChangeText={setcpass}
+          value={cpass}
+        />
         <Text style={styles.titleTop}>EMAIL</Text>
         <TextInput
           style={{
@@ -83,18 +114,6 @@ const SignUpScreen = ({ navigation }) => {
           }}
           onChangeText={setEmail}
           value={email}
-        />
-        <Text style={styles.titleTop}>PHONE NUMBER</Text>
-        <TextInput
-          style={{
-            width: 300,
-            padding: 10,
-            borderRadius: 10,
-            backgroundColor: "white",
-            marginBottom: 10,
-          }}
-          onChangeText={setPhone}
-          value={phone}
         />
       </View>
       <View style={styles.container}>

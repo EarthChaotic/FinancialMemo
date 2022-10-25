@@ -88,6 +88,9 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
         </TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate("LOGIN")}>
+          <Text>LOGOUT</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

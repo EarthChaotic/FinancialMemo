@@ -10,8 +10,8 @@ import {
 import React, { useState } from "react";
 
 const LoginScreen = ({ navigation }) => {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   function handleSumbit() {
     if (username==="") {
       alert("โปรดใส่ไอดี");
@@ -20,6 +20,8 @@ const LoginScreen = ({ navigation }) => {
     }
     else{
       navigation.navigate('HOME')
+      setUsername("")
+      setPassword("")
     }
   }
   return (
