@@ -42,28 +42,37 @@ export const AddWallet = () => {
 
   return (
     <View style={styles.container}>
-      <Text>ชื่อกระเป๋าเงิน</Text>
-      <TextInput
-        placeholder="กระเป๋าตัง"
-        value={walletn}
-        onChangeText={setwalletn}
-        style={Styles.SupportTextInp}
-      />
-      <Text>จำนวนเงิน</Text>
-      <TextInput
-        placeholder="จำนวนเงิน"
-        value={amount}
-        onChangeText={setamount}
-        style={Styles.SupportTextInp}
-      />
-      <Text>ประเภท :</Text>
-      <RNPickerSelect
-        onValueChange={setType}
-        items={[
-          { label: "เงินสด", value: "เงินสด" },
-          { label: "ธนาคาร", value: "ธนาคาร" },
-        ]}
-      />
+      <View style={Styles.modalrow}>
+        <Text>ชื่อกระเป๋าเงิน</Text>
+        <TextInput
+          placeholder="กระเป๋าตัง"
+          value={walletn}
+          onChangeText={setwalletn}
+          style={Styles.SupportTextInp}
+        />
+      </View>
+
+      <View style={Styles.modalrow}>
+        <Text>จำนวนเงิน</Text>
+        <TextInput
+          placeholder="จำนวนเงิน"
+          value={amount}
+          onChangeText={setamount}
+          style={Styles.SupportTextInp}
+        />
+      </View>
+
+      <View style={Styles.modalrow}>
+        <Text>ประเภท :</Text>
+        <RNPickerSelect
+          onValueChange={setType}
+          items={[
+            { label: "เงินสด", value: "เงินสด" },
+            { label: "ธนาคาร", value: "ธนาคาร" },
+          ]}
+        />
+      </View>
+
       <TouchableOpacity style={Styles.AddYellow} onPress={handleSumbit}>
         <Text style={{ color: "#FFFFFF", fontWeight: "bold" }}>CONFIRM</Text>
       </TouchableOpacity>
@@ -73,7 +82,7 @@ export const AddWallet = () => {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 2,
+    margin: 10,
   },
   input: {
     backgroundColor: "ghostwhite",
@@ -81,4 +90,5 @@ const styles = StyleSheet.create({
     padding: 8,
     height: 40,
   },
+  
 });

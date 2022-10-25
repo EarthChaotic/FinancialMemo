@@ -47,7 +47,11 @@ const WalletScreen = ({ navigation }) => {
       <Modal animationType={"slide"} transparent={false} visible={showModal}>
         <AddWallet/>
         <TouchableOpacity
-          style={Styles.CancelTouch}
+          style={{    margin: 10,
+            backgroundColor: "#8D9DA9",
+            padding: 5,
+            borderRadius: 5,
+            alignItems:'center'}}
           onPress={() => setShowModal(!showModal)}
         >
           <Text
